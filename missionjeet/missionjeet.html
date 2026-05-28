@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PW Nexus - Mission Jeet</title>
+    <link rel="stylesheet" href="missionjeet.css">
+    <link rel="stylesheet" href="../css/notification.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <div class="logo-box">
+                <img src="../assets/mission jeet.png" alt="Mission Jeet" width="28" height="28" style="object-fit: contain; border-radius: 4px;">
+            </div>
+            <span class="logo-text">MISSION<span class="logo-highlight">JEET</span></span>
+        </div>
+        <div class="nav-links">
+            <a href="#" class="btn-batches"><span class="icon">&#8862;</span> BATCHES</a>
+            <a href="#" class="nav-link"><span class="icon">&#9825;</span> WISHLIST</a>
+            <a href="../about.html" class="nav-link"><span class="icon">&#9786;</span> ABOUT</a>
+            <a href="#" class="nav-link"><span class="icon">&#128379;</span> SUPPORT</a>
+        </div>
+    </nav>
+    <header class="header">
+        <div class="session-badge">
+            <span class="dot"></span> 2026-2027 SESSIONS
+        </div>
+        
+        <h1 class="title">Explore <span class="highlight">Premium Batches</span></h1>
+        
+        <p class="subtitle">Unlock top-tier educational content, live classes, and high-quality study materials designed exclusively for your success.</p>
+        
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PW Nexus - Mission Jeet</title>
+    <link rel="stylesheet" href="missionjeet.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <div class="logo-box">
+                <img src="../assets/mission jeet.png" alt="Mission Jeet" width="28" height="28" style="object-fit: contain; border-radius: 4px;">
+            </div>
+            <span class="logo-text">MISSION<span class="logo-highlight">JEET</span></span>
+        </div>
+        <div class="nav-links">
+            <a href="#" class="btn-batches"><span class="icon">&#8862;</span> BATCHES</a>
+            <a href="#" class="nav-link"><span class="icon">&#9825;</span> WISHLIST</a>
+            <a href="../about.html" class="nav-link"><span class="icon">&#9786;</span> ABOUT</a>
+            <a href="#" class="nav-link"><span class="icon">&#128379;</span> SUPPORT</a>
+        </div>
+    </nav>
+    <header class="header">
+        <div class="session-badge">
+            <span class="dot"></span> 2026-2027 SESSIONS
+        </div>
+        
+        <h1 class="title">Explore <span class="highlight">Premium Batches</span></h1>
+        
+        <p class="subtitle">Unlock top-tier educational content, live classes, and high-quality study materials designed exclusively for your success.</p>
+        
+        <div class="search-container">
+            <span class="search-icon">&#128269;</span>
+            <input type="text" class="search-input" placeholder="Search for a batch (e.g. Science, Class 12)...">
+        </div>
+    </header>
+
+    <main class="batches-container" id="batches-container">
+        <!-- Batches will be loaded dynamically -->
+        <div style="text-align: center; width: 100%; color: #888;">Loading batches...</div>
+    </main>
+
+    <script src="../js/api.js"></script>
+    <script>
+        async function loadBatches() {
+            const container = document.getElementById('batches-container');
+            try {
+                const batches = await api.getBatches('missionjeet');
+                container.innerHTML = '';
+                
+                if (batches.length === 0) {
+                    container.innerHTML = '<div style="text-align: center; width: 100%; color: #888;">No batches available.</div>';
+                    return;
+                }
+                
+                batches.forEach(batch => {
+                    const card = document.createElement('div');
+                    card.className = 'batch-card';
+                    card.onclick = () => window.location.href = `../dashboard/dashboard.html?batchId=${batch.id}&portal=missionjeet`;
+                    card.style.cursor = 'pointer';
+                    
+                    card.innerHTML = `
+                        <div class="card-image" style="background-image: url('${batch.image}'); background-size: cover; background-position: center;">
+                            <div class="class-badge">${batch.class}</div>
+                            <div class="price-badge">
+                                <span class="original-price">₹${batch.originalPrice}/-</span>
+                                <span class="current-price">₹${batch.price}/-</span>
+                            </div>
+                            <div class="wishlist-btn" onclick="event.stopPropagation(); alert('Added to wishlist!')">&#9825;</div>
+                        </div>
+                        <div style="padding: 16px;">
+                            <h3 style="margin: 0; font-size: 1.1rem; color: #fff;">${batch.name}</h3>
+                        </div>
+                    `;
+                    container.appendChild(card);
+                });
+            } catch (error) {
+                container.innerHTML = '<div style="text-align: center; width: 100%; color: red;">Failed to load batches.</div>';
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', loadBatches);
+    </script>
+
+    <!-- Notification Popup -->
+    <div class="notif-popup-overlay" id="notif-popup">
+        <div class="notif-popup-inner">
+            <div class="notif-popup-close" onclick="dismissNotif()">×</div>
+            <div class="notif-popup-title">Important update!!</div>
+            <div class="notif-popup-msg">
+                🚀 Join Our Official Telegram Channel!<br><br>
+                Get the latest updates, announcements, study materials, and exclusive content directly on Telegram. Don't miss important notifications and new releases.<br><br>
+                👉 Join Now: <a href="https://t.me/pwnexus" target="_blank">https://t.me/pwnexus</a><br><br>
+                Stay connected with us anytime, anywhere! 💙
+            </div>
+        </div>
+    </div>
+    <script>
+        window.addEventListener('load', function(){ document.getElementById('notif-popup').style.display = 'flex'; });
+        function dismissNotif(){ document.getElementById('notif-popup').style.display = 'none'; }
+    </script>
+</body>
+</html>

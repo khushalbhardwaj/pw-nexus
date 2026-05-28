@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<body>
+<video id="vid" controls width="500"></video>
+<script>
+const url = "https://d3cx6qbbd4cbso.cloudfront.net/file_library/videos/download/4391691/1748179832_7895501635857419/1748177660740_217256690396284670_video_VOD720p30";
+const vid = document.getElementById("vid");
+vid.innerHTML = `<source src="${url}" type="video/mp4">`;
+vid.load();
+</script>
+</body>
+</html>

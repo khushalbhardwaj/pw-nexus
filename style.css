@@ -1,0 +1,303 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0B0E14;
+    color: #e5e7eb;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    background-image: radial-gradient(circle at center top, rgba(30, 30, 40, 0.8) 0%, #0B0E14 50%);
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-container {
+    margin-bottom: 24px;
+    position: relative;
+}
+
+.logo-box {
+    width: 60px;
+    height: 60px;
+    background: #FFB347;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 30px rgba(255, 179, 71, 0.4);
+}
+
+.logo-box svg {
+    width: 32px;
+    height: 32px;
+}
+
+.ecosystem-badge {
+    display: inline-flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #a3a3a3;
+    margin-bottom: 20px;
+}
+
+.ecosystem-badge .dot {
+    width: 8px;
+    height: 8px;
+    background-color: #4ADE80;
+    border-radius: 50%;
+    margin-right: 8px;
+    box-shadow: 0 0 8px #4ADE80;
+}
+
+.title {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 16px;
+    color: #ffffff;
+}
+
+.title .highlight {
+    color: #F59E0B;
+}
+
+.subtitle {
+    max-width: 600px;
+    color: #9ca3af;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+.cards-container {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.card {
+    flex: 1;
+    min-width: 300px;
+    max-width: 350px;
+    background-color: #11131A;
+    border-radius: 24px;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+}
+
+.card-next-topper::before {
+    background: linear-gradient(90deg, #FCD34D, #F59E0B);
+}
+
+.card-mission-jeet::before {
+    background: linear-gradient(90deg, #60A5FA, #2563EB);
+}
+
+.card-icon-wrapper {
+    width: 80px;
+    height: 80px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    overflow: hidden;
+}
+
+.card-icon-wrapper img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+}
+
+.card-next-topper .card-icon-wrapper {
+    box-shadow: 0 0 40px rgba(245, 158, 11, 0.15);
+}
+
+.card-mission-jeet .card-icon-wrapper {
+    box-shadow: 0 0 40px rgba(37, 99, 235, 0.15);
+}
+
+.card h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #ffffff;
+}
+
+.card p {
+    color: #9ca3af;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 32px;
+    flex-grow: 1;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 14px 0;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.btn span {
+    margin-left: 8px;
+    font-size: 16px;
+}
+
+/* Button styles */
+.btn-next-topper {
+    background-color: rgba(245, 158, 11, 0.1);
+    color: #FCD34D;
+    border-color: rgba(245, 158, 11, 0.2);
+}
+
+.btn-next-topper:hover {
+    background-color: rgba(245, 158, 11, 0.2);
+}
+
+.btn-mission-jeet {
+    background-color: rgba(37, 99, 235, 0.1);
+    color: #93C5FD;
+    border-color: rgba(37, 99, 235, 0.2);
+}
+
+.btn-mission-jeet:hover {
+    background-color: rgba(37, 99, 235, 0.2);
+}
+
+.card-pw::before {
+    background: linear-gradient(90deg, #A855F7, #7E22CE); /* Purple gradient */
+}
+
+.card-pw .card-icon-wrapper {
+    box-shadow: 0 0 40px rgba(168, 85, 247, 0.15);
+    background: #000;
+}
+
+.btn-pw {
+    background-color: rgba(168, 85, 247, 0.1);
+    color: #D8B4FE;
+    border-color: rgba(168, 85, 247, 0.2);
+}
+
+.btn-pw:hover {
+    background-color: rgba(168, 85, 247, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .title {
+        font-size: 36px;
+    }
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .card {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+/* Footer */
+.site-footer {
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 60px;
+    padding: 32px 20px 24px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    text-align: center;
+}
+
+.footer-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 16px;
+    opacity: 0.4;
+    transition: opacity 0.2s;
+}
+
+.footer-icon:hover {
+    opacity: 0.8;
+}
+
+.footer-text {
+    color: #575757;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.footer-copy {
+    color: #444;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-top: 8px;
+}
+
+/* Additional Responsive Adjustments */
+@media (max-width: 640px) {
+  .header { flex-direction: column; padding: 20px; }
+  .logo-box { width: 50px; height: 50px; }
+  .logo-box svg { width: 24px; height: 24px; }
+  .ecosystem-badge { font-size: 10px; padding: 4px 12px; }
+  .title { font-size: 32px; }
+  .subtitle { font-size: 14px; }
+  .card { padding: 30px 20px; }
+}

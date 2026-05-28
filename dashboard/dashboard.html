@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - PW Nexus</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="../css/notification.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <!-- Top Action Bar -->
+        <div class="top-action-bar">
+            <a href="../nextopperr/nexttopperr.html" class="back-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                BACK TO BATCHES
+            </a>
+        </div>
+        
+        <div class="hero-banner">
+            <div class="hero-content">
+                <div class="badge">
+                    <span class="dot"></span> EXPLORER ACTIVE
+                </div>
+                <h1 id="batch-title">Loading...</h1>
+            </div>
+            <div class="hero-image" id="batch-thumbnail">
+                <!-- Image injected via JS -->
+            </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs-container">
+            <ul class="nav-tabs">
+                <li class="tab-link active" data-target="overview-tab">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    OVERVIEW
+                </li>
+                <li class="tab-link" data-target="content-tab">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                    CONTENT
+                </li>
+            </ul>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content-area">
+            
+            <!-- Overview Tab -->
+            <div id="overview-tab" class="tab-content active">
+                <p class="empty-state">No overview details available for this course.</p>
+            </div>
+
+            <!-- Content Tab -->
+            <div id="content-tab" class="tab-content">
+                <div class="content-header">
+                    <div id="breadcrumb-container" class="breadcrumb-container">
+                        <!-- Breadcrumbs for folder navigation -->
+                    </div>
+                    <div class="search-bar">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        <input type="text" placeholder="Search content...">
+                    </div>
+                </div>
+
+                <!-- Grid for folders and files -->
+                <div class="folder-grid" id="content-grid">
+                    <p class="loading-text">Loading content...</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Full-Screen Custom Video Player View -->
+    <div id="custom-player-view" class="custom-player-view">
+        <div class="player-top-bar">
+            <button id="close-player-btn" class="return-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Return to Curriculum
+            </button>
+        </div>
+
+        <div class="player-main-content">
+            <div class="video-wrapper">
+                <video id="custom-video-player" controls preload="metadata"></video>
+            </div>
+
+            <div class="player-controls-card">
+                <div class="player-info-header" style="margin-bottom: 0; border-bottom: none; padding-bottom: 0;">
+                    <span id="player-batch-badge" class="batch-badge">BATCH NAME</span>
+                    <h2 id="player-video-title">Video Title</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FACC15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+        </div>
+        <p class="footer-text">Designed &amp; Developed by Khushal</p>
+        <p class="footer-copy">&copy; 2026 PW Nexus</p>
+    </footer>
+
+    <!-- Notification Popup -->
+    <div class="notif-popup-overlay" id="notif-popup">
+        <div class="notif-popup-inner">
+            <div class="notif-popup-close" onclick="dismissNotif()">×</div>
+            <div class="notif-popup-title">Important update!!</div>
+            <div class="notif-popup-msg">
+                🚀 Join Our Official Telegram Channel!<br><br>
+                Get the latest updates, announcements, study materials, and exclusive content directly on Telegram. Don't miss important notifications and new releases.<br><br>
+                👉 Join Now: <a href="https://t.me/pwnexus" target="_blank">https://t.me/pwnexus</a><br><br>
+                Stay connected with us anytime, anywhere! 💙
+            </div>
+        </div>
+    </div>
+    <script>
+        window.addEventListener('load', function(){ document.getElementById('notif-popup').style.display = 'flex'; });
+        function dismissNotif(){ document.getElementById('notif-popup').style.display = 'none'; }
+    </script>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>

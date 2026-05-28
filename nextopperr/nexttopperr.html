@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PW Nexus - Next Topper</title>
+    <link rel="stylesheet" href="nexttopper.css">
+    <link rel="stylesheet" href="../css/notification.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <div class="logo-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="3" y="3" width="18" height="18" rx="2" stroke="black" stroke-width="2"/>
+                    <path d="M3 9H21" stroke="black" stroke-width="2"/>
+                    <path d="M9 21V9" stroke="black" stroke-width="2"/>
+                </svg>
+            </div>
+            <span class="logo-text">PW Nexus</span>
+        </div>
+        <div class="nav-links">
+            <a href="#" class="btn-batches"><span class="icon">&#8862;</span> BATCHES</a>
+            <a href="#" class="nav-link"><span class="icon">&#9825;</span> WISHLIST</a>
+            <a href="../about.html" class="nav-link"><span class="icon">&#9786;</span> ABOUT</a>
+            <a href="#" class="nav-link"><span class="icon">&#128379;</span> SUPPORT</a>
+        </div>
+    </nav>
+
+    <header class="header">
+        <div class="session-badge">
+            <span class="dot"></span> 2026-2027 SESSIONS
+        </div>
+        
+        <h1 class="title">Explore <span class="highlight">Batches</span></h1>
+        
+        <p class="subtitle">Unlock top-tier educational content, live classes, and high-quality study materials designed exclusively for your success. All available for free.</p>
+        
+        <div class="search-container">
+            <span class="search-icon">&#128269;</span>
+            <input type="text" class="search-input" placeholder="Search for a batch (e.g. Commerce, Class 10)...">
+        </div>
+    </header>
+
+    <main class="batches-container" id="batches-container">
+        <!-- Batches will be loaded dynamically -->
+        <div style="text-align: center; width: 100%; color: #888;">Loading batches...</div>
+    </main>
+
+    <script src="../js/api.js"></script>
+    <script>
+        async function loadBatches() {
+            const container = document.getElementById('batches-container');
+            try {
+                const batches = await api.getBatches('nexttopper');
+                container.innerHTML = '';
+                
+                if (batches.length === 0) {
+                    container.innerHTML = '<div style="text-align: center; width: 100%; color: #888;">No batches available.</div>';
+                    return;
+                }
+                
+                batches.forEach(batch => {
+                    const card = document.createElement('div');
+                    card.className = 'batch-card';
+                    card.onclick = () => window.location.href = `../dashboard/dashboard.html?batchId=${batch.id}&portal=nexttopper`;
+                    card.style.cursor = 'pointer';
+                    
+                    card.innerHTML = `
+                        <div class="card-image" style="background-image: url('${batch.image}'); background-size: cover; background-position: center;">
+                            <div class="class-badge">${batch.class}</div>
+                            <div class="price-badge">
+                                <span class="original-price">₹${batch.originalPrice}/-</span>
+                                <span class="current-price">₹${batch.price}/-</span>
+                            </div>
+                            <div class="wishlist-btn" onclick="event.stopPropagation(); alert('Added to wishlist!')">&#9825;</div>
+                        </div>
+                        <div style="padding: 16px;">
+                            <h3 style="margin: 0; font-size: 1.1rem;">${batch.name}</h3>
+                        </div>
+                    `;
+                    container.appendChild(card);
+                });
+            } catch (error) {
+                container.innerHTML = '<div style="text-align: center; width: 100%; color: red;">Failed to load batches.</div>';
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', loadBatches);
+    </script>
+    
+    <!-- Mobile Bottom Nav -->
+    <div class="mobile-bottom-nav">
+        <button onclick="window.location.href='../index.html'" class="mobile-nav-btn">
+            <i data-lucide="layout-grid" class="icon"></i>
+            <span>Batches</span>
+        </button>
+        <button onclick="window.location.href='../about.html'" class="mobile-nav-btn active">
+            <i data-lucide="user" class="icon"></i>
+            <span>About</span>
+        </button>
+        <button onclick="window.location.href='../contact.html'" class="mobile-nav-btn">
+            <i data-lucide="headset" class="icon"></i>
+            <span>Support</span>
+        </button>
+    </div>
+    
+    <footer class="site-footer">
+        <div class="footer-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FACC15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+        </div>
+        <p class="footer-text">Designed &amp; Developed by Khushal</p>
+        <p class="footer-copy">&copy; 2026 PW Nexus</p>
+    </footer>
+
+    <!-- Notification Popup -->
+    <div class="notif-popup-overlay" id="notif-popup">
+        <div class="notif-popup-inner">
+            <div class="notif-popup-close" onclick="dismissNotif()">×</div>
+            <div class="notif-popup-title">Important update!!</div>
+            <div class="notif-popup-msg">
+                🚀 Join Our Official Telegram Channel!<br><br>
+                Get the latest updates, announcements, study materials, and exclusive content directly on Telegram. Don't miss important notifications and new releases.<br><br>
+                👉 Join Now: <a href="https://t.me/pwnexus" target="_blank">https://t.me/pwnexus</a><br><br>
+                Stay connected with us anytime, anywhere! 💙
+            </div>
+        </div>
+    </div>
+    <script>
+        window.addEventListener('load', function(){ document.getElementById('notif-popup').style.display = 'flex'; });
+        function dismissNotif(){ document.getElementById('notif-popup').style.display = 'none'; }
+    </script>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

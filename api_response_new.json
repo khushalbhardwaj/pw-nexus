@@ -1,0 +1,41 @@
+﻿{
+    "success":  true,
+    "responseCode":  3025,
+    "message":  "Content Details",
+    "data":  {
+                 "id":  17775,
+                 "title":  "Orienting Yourself: The Use of Coordinates | L6",
+                 "description":  null,
+                 "thumbnail":  "https://dylnd2lqy6eys.cloudfront.net/1770981347/admin_v2/content/thumbnail/892449_148_Science%20Stream%20%2810%29.png",
+                 "file_url":  "https://dbil3go8szhu6.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4770632/177945403160611664920/177945403160611664920_1664920.m3u8",
+                 "file_type":  2,
+                 "video_type":  4,
+                 "is_drm":  0,
+                 "is_download":  1,
+                 "in_app":  0,
+                 "is_share":  0,
+                 "vdc_id":  "4770632_0_4767512673476034",
+                 "duration":  "4096",
+                 "created_at":  "1779443425",
+                 "live_from":  "1779449922",
+                 "live_to":  "1779454031",
+                 "live_status":  2,
+                 "doubt_pdf":  null,
+                 "chat_node":  "177944342517775",
+                 "public_chat":  0,
+                 "emoji_lock":  0,
+                 "chat_mode":  0,
+                 "last_watched_seconds":  "0",
+                 "has_pdf":  "0",
+                 "mqtt_live_cred":  [
+
+                                    ],
+                 "video_time_bookmarks":  [
+
+                                          ],
+                 "poll_list":  [
+
+                               ],
+                 "review_sumbitted":  "0"
+             }
+}

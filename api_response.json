@@ -1,0 +1,221 @@
+﻿{
+    "data":  [
+                 {
+                     "course_id":  "178",
+                     "data":  {
+                                  "content_counts":  {
+                                                         "folders":  {
+                                                                         "direct":  3,
+                                                                         "total":  11
+                                                                     },
+                                                         "pdf":  {
+                                                                     "free":  0,
+                                                                     "paid":  75
+                                                                 },
+                                                         "test":  {
+                                                                      "free":  0,
+                                                                      "paid":  0
+                                                                  },
+                                                         "video":  {
+                                                                       "free":  0,
+                                                                       "paid":  16
+                                                                   }
+                                                     },
+                                  "id":  9062,
+                                  "parent_id":  0,
+                                  "thumbnail":  "https://d2s4bvj9txf5k0.cloudfront.net/540/admin_v1/category_management/subject/489940825319_Artificial%20Intelligence.png",
+                                  "title":  "Artificial Intelligence"
+                              },
+                     "entity_id":  "9062",
+                     "parent_id":  0,
+                     "title":  "Artificial Intelligence",
+                     "type":  "folder"
+                 },
+                 {
+                     "course_id":  "178",
+                     "data":  {
+                                  "content_counts":  {
+                                                         "folders":  {
+                                                                         "direct":  2,
+                                                                         "total":  1
+                                                                     },
+                                                         "links":  {
+                                                                       "free":  0,
+                                                                       "paid":  0
+                                                                   },
+                                                         "notes":  {
+                                                                       "free":  0,
+                                                                       "paid":  0
+                                                                   },
+                                                         "pdf":  {
+                                                                     "free":  0,
+                                                                     "paid":  0
+                                                                 },
+                                                         "test":  {
+                                                                      "free":  0,
+                                                                      "paid":  0
+                                                                  },
+                                                         "video":  {
+                                                                       "free":  0,
+                                                                       "paid":  1
+                                                                   }
+                                                     },
+                                  "id":  9051,
+                                  "parent_id":  0,
+                                  "thumbnail":  "https://d2s4bvj9txf5k0.cloudfront.net/540/admin_v1/category_management/subject/290274114891_Artificial%20Intelligence-2.png",
+                                  "title":  "Information technology"
+                              },
+                     "entity_id":  "9051",
+                     "parent_id":  0,
+                     "title":  "Information technology",
+                     "type":  "folder"
+                 },
+                 {
+                     "course_id":  "178",
+                     "data":  {
+                                  "content_counts":  {
+                                                         "folders":  {
+                                                                         "direct":  2,
+                                                                         "total":  2
+                                                                     },
+                                                         "links":  {
+                                                                       "free":  0,
+                                                                       "paid":  0
+                                                                   },
+                                                         "notes":  {
+                                                                       "free":  0,
+                                                                       "paid":  0
+                                                                   },
+                                                         "pdf":  {
+                                                                     "free":  0,
+                                                                     "paid":  1
+                                                                 },
+                                                         "test":  {
+                                                                      "free":  0,
+                                                                      "paid":  0
+                                                                  },
+                                                         "video":  {
+                                                                       "free":  0,
+                                                                       "paid":  1
+                                                                   }
+                                                     },
+                                  "id":  8676,
+                                  "parent_id":  0,
+                                  "title":  "Social Science"
+                              },
+                     "entity_id":  "8676",
+                     "parent_id":  0,
+                     "title":  "Social Science",
+                     "type":  "folder"
+                 },
+                 {
+                     "course_id":  "178",
+                     "data":  {
+                                  "content_counts":  {
+                                                         "folders":  {
+                                                                         "direct":  3,
+                                                                         "total":  3
+                                                                     },
+                                                         "links":  {
+                                                                       "free":  0,
+                                                                       "paid":  0
+                                                                   },
+                                                         "notes":  {
+                                                                       "free":  0,
+                                                                       "paid":  0
+                                                                   },
+                                                         "pdf":  {
+                                                                     "free":  0,
+                                                                     "paid":  8
+                                                                 },
+                                                         "test":  {
+                                                                      "free":  0,
+                                                                      "paid":  0
+                                                                  },
+                                                         "video":  {
+                                                                       "free":  0,
+                                                                       "paid":  6
+                                                                   }
+                                                     },
+                                  "id":  8610,
+                                  "parent_id":  0,
+                                  "title":  "Maths"
+                              },
+                     "entity_id":  "8610",
+                     "parent_id":  0,
+                     "title":  "Maths",
+                     "type":  "folder"
+                 },
+                 {
+                     "course_id":  "178",
+                     "data":  {
+                                  "content_counts":  {
+                                                         "folders":  {
+                                                                         "direct":  3,
+                                                                         "total":  3
+                                                                     },
+                                                         "pdf":  {
+                                                                     "free":  0,
+                                                                     "paid":  6
+                                                                 },
+                                                         "test":  {
+                                                                      "free":  0,
+                                                                      "paid":  0
+                                                                  },
+                                                         "video":  {
+                                                                       "free":  0,
+                                                                       "paid":  6
+                                                                   }
+                                                     },
+                                  "id":  8538,
+                                  "parent_id":  0,
+                                  "title":  "Science"
+                              },
+                     "entity_id":  "8538",
+                     "parent_id":  0,
+                     "title":  "Science",
+                     "type":  "folder"
+                 },
+                 {
+                     "course_id":  "178",
+                     "data":  {
+                                  "content_counts":  {
+                                                         "folders":  {
+                                                                         "direct":  0,
+                                                                         "total":  0
+                                                                     },
+                                                         "links":  {
+                                                                       "free":  0,
+                                                                       "paid":  0
+                                                                   },
+                                                         "notes":  {
+                                                                       "free":  0,
+                                                                       "paid":  0
+                                                                   },
+                                                         "pdf":  {
+                                                                     "free":  0,
+                                                                     "paid":  0
+                                                                 },
+                                                         "test":  {
+                                                                      "free":  0,
+                                                                      "paid":  0
+                                                                  },
+                                                         "video":  {
+                                                                       "free":  0,
+                                                                       "paid":  1
+                                                                   }
+                                                     },
+                                  "id":  8506,
+                                  "parent_id":  0,
+                                  "title":  "Welcome"
+                              },
+                     "entity_id":  "8506",
+                     "parent_id":  0,
+                     "title":  "Welcome",
+                     "type":  "folder"
+                 }
+             ],
+    "message":  "Course Content",
+    "responseCode":  3006,
+    "success":  true
+}
